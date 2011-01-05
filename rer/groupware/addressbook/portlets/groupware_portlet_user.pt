@@ -1,0 +1,45 @@
+<dl class="portlet groupwarePortletUser"
+	id="groupware-portlet-user"
+    i18n:domain="rer.groupware.addressbook">
+
+    <dd class="portletItem itemPortrait" tal:define="user view/getUser; portrait user/portrait;">
+    	<span id="portal_url" style="display:none" tal:content="here/portal_url"></span>
+		<div class="user_info">
+			<img src="" class="user_avatar"
+             	tal:condition="portrait"
+             	tal:attributes="src portrait/absolute_url; alt string:${user/id}; title string:${user/id}"
+             />
+			<p class="userName"  tal:content="user/name"/>
+			<p i18n:translate="" class="userRole" tal:condition="user/role_in_room">
+				In this room you are in <span class="groupRole" tal:content="user/role_in_room" i18n:name="role_in_room_label">member</span> group. 
+			</p>
+		</div>
+	</dd>
+	<dd class="portletItem roomGroups"
+		tal:define="groups view/getRoomMembers"
+		tal:condition="groups">
+			<p class="documentDescription" tal:content="groups/room_title">room title</p>
+			<tal:groups tal:repeat="group groups/groups_list">
+				<div class="roomGroupDetail"
+					 tal:define="last repeat/group/end"
+					 tal:attributes="class python:'roomGroupMembers lastMemberDetail' and last or 'roomGroupMembers'">
+					<a href="#" class="groupName">
+						<span tal:content="group/group">group name</span>
+					</a>
+					<ul class="roomGroupMembers hiddenMembers">
+						<li class="roomGroupMemberDetail" tal:repeat="user group/members">
+							<tal:user define="userid user/userid">
+								<a tal:attributes="href string:${here/absolute_url}/author/${userid}">
+									<span tal:condition="python:user.get('givenName','') and user.get('sn','')"
+										  tal:content="string:${user/givenName} ${user/sn}"></span>
+									<span tal:condition="not:python:user.get('givenName','') and user.get('sn','')"
+									      tal:content="user/userid"></span>
+								</a>
+							</tal:user>
+						</li>
+					</ul>
+				</div>
+			</tal:groups>
+	</dd>	
+</dl>
+

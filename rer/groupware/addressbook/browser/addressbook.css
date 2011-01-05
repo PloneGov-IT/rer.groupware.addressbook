@@ -1,0 +1,62 @@
+div.roomGroupMembers{
+	border-bottom:1px dotted #ccc !important;
+}
+
+.lastMemberDetail{
+	border:0 !important;
+}
+
+li.roomGroupMemberDetail{
+	margin-left:1em;
+}
+
+.collapsedButton{
+	background: url("treeCollapsed.gif") no-repeat scroll 0 0.3em transparent;
+}
+
+.expandedButton{
+	background: url("treeExpanded.gif") no-repeat scroll 0 0.3em transparent;
+}
+
+.groupName span{
+	padding-left:1.5em;
+	font-weight: bold;
+}
+
+.portletItem ul.roomGroupMembers {
+    list-style-position: inside;
+    list-style-type: square;
+}
+
+.quickSearch{
+	display:block;
+}
+
+.userName{
+	font-weight: bold;
+    padding-bottom: 0.5em;
+}
+
+.userRole{
+	border-bottom: 1px dotted #CCCCCC;
+    border-top: 1px dotted #CCCCCC;
+    margin: 0;
+    padding: 1em 0;
+}
+
+#groupware-portlet-user dd.itemPortrait{
+	padding-bottom:0;
+}
+
+.groupwarePortletUser{
+	border-top: 1px solid #8CACBB;
+}
+
+.groupRole{
+	font-style:italic;
+}
+
+/*AUTHOR.CPT*/
+.authorInformations{
+	margin-top: 1em;
+}

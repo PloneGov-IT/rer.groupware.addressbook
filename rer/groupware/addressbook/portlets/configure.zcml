@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="rer.groupware.addressbook">
+
+    <five:registerPackage package="." />
+    
+     <!-- Register the portlet -->
+	<plone:portlet
+         name="rer.groupware.addressbook.portletUser"
+         interface=".groupware_portlet_user.IGroupwareUserPortlet"
+         assignment=".groupware_portlet_user.Assignment"
+         view_permission="zope2.View"
+         renderer=".groupware_portlet_user.Renderer"
+         addview=".groupware_portlet_user.AddForm"
+         />
+	
+</configure>

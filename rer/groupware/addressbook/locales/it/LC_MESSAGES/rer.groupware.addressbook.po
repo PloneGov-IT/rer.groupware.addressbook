@@ -1,0 +1,114 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2011-01-03 16:40+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: it\n"
+"Language-Name: Italian\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: rer.groupware.addressbook\n"
+
+#. Default: "In this room you are in ${role_in_room_label} group."
+#: ./portlets/groupware_portlet_user.pt:20
+msgid "In this room you are in ${role_in_room_label} group."
+msgstr "In questa stanza sei nel gruppo ${role_in_room_label}."
+
+#: ./browser/search_form_users.py:48
+msgid "You must enter at least one search criteria"
+msgstr "Devi inserire almeno un criterio di ricerca"
+
+#. Default: "Error"
+#: ./browser/search_form_users.pt:26
+msgid "form_label_error"
+msgstr "Errore"
+
+#. Default: "Find collaborators"
+#: ./browser/search_form_users.pt:88
+msgid "label_search_collaborators"
+msgstr "Trova collaboratori"
+
+#. Default: "start of the name"
+#: ./browser/search_form_users.pt:56
+msgid "searchName_help"
+msgstr "inizio del nome"
+
+#. Default: "Name"
+#: ./browser/search_form_users.pt:55
+msgid "searchName_title"
+msgstr "Nome"
+
+#. Default: "Organization/Office"
+#: ./browser/search_form_users.pt:77
+msgid "searchOffice_title"
+msgstr "Ente/Ufficio"
+
+#. Default: "final numbers of the phone (for example: 4882)"
+#: ./browser/search_form_users.pt:66
+msgid "searchPhone_help"
+msgstr "numeri finali del telefono (esempio: 4882)"
+
+#. Default: "Phone"
+#: ./browser/search_form_users.pt:65
+msgid "searchPhone_title"
+msgstr "Telefono"
+
+#. Default: "start of the surname"
+#: ./browser/search_form_users.pt:46
+msgid "searchSurname_help"
+msgstr "inizio del cognome"
+
+#. Default: "Surname"
+#: ./browser/search_form_users.pt:45
+msgid "searchSurname_title"
+msgstr "Cognome"
+
+#. Default: "Search collaborators"
+#: ./browser/search_form_users.pt:33
+msgid "search_users_form_title"
+msgstr "Cerca collaboratori"
+
+#. Default: "No one user found with the given parameters."
+#: ./browser/search_form_users.pt:129
+msgid "text_nomatches"
+msgstr "Nessun utente trovato con i parametri passati."
+
+#. Default: "welcome"
+#: ./portlets/groupware_portlet_user.pt:15
+msgid "welcome_label"
+msgstr "benvenuto/a"
+
+#. Default: "welcome"
+#: ./portlets/groupware_portlet_user.pt:15
+msgid "welcome_label"
+msgstr "benvenuto/a"
+
+#. Default: "coordinators"
+#: ./browser/search_form_users.pt
+msgid "coordinators"
+msgstr "coordinatori"
+
+#. Default: "members advanced"
+#: ./browser/search_form_users.pt
+msgid "membersAdv"
+msgstr "membri avanzati"
+
+#. Default: "members"
+#: ./browser/search_form_users.pt
+msgid "members"
+msgstr "membri"
+
+#. Default: "hosts"
+#: ./browser/search_form_users.pt
+msgid "hosts"
+msgstr "ospiti"
+
+#. Default: "In this room you are in ${role_in_room_label} group."
+#: ./browser/search_form_users.pt
+msgid "In this room you are in ${role_in_room_label} group."
+msgstr "In questa stanza sei nel gruppo ${role_in_room_label}."

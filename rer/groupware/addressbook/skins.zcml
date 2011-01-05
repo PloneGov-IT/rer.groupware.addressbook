@@ -1,0 +1,9 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    i18n_domain="rer.groupware.addressbook">
+
+  <!-- File System Directory Views registration -->
+  <cmf:registerDirectory name="groupware_addressbook_custom_templates"/>
+
+</configure>

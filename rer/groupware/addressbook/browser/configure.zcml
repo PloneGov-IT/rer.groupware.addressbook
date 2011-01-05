@@ -1,0 +1,31 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="rer.groupware.addressbook">
+ 
+ <browser:page
+        name="users_search"
+        for="*"
+		class=".search_form_users.SearchFormUsersView"
+        template="search_form_users.pt"
+        permission="zope2.View"
+        />
+ 
+ <browser:page
+      for="*"
+      class=".memberinfo.MemberInfo"
+      name="memberinfo"
+      permission="zope.Public"
+	  allowed_attributes="getMemberInfo"
+      />
+		
+ <browser:resourceDirectory
+      name="rer.groupware.addressbook.javascripts"
+      directory="javascripts"
+      />
+	  
+ <browser:resource
+      name="addressbook.css"
+	  file="addressbook.css"
+      />
+</configure>

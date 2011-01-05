@@ -1,0 +1,143 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="rer.groupware.addressbook">
+
+    <metal:head fill-slot="top_slot"
+                tal:define="dummy python:request.set('disable_border',1)" />
+
+<div metal:fill-slot="main"
+    tal:define="Batch python:modules['Products.CMFPlone'].Batch;
+                b_start request/b_start | python:0;
+                b_size request/b_size | python:20;
+                portal_roles here/getGlobalPortalRoles;
+                searchName request/searchName | nothing;
+        searchSurname request/searchSurname | nothing;
+        searchPhone request/searchPhone | nothing;
+        searchOffice request/searchOffice | nothing;">
+
+    <tal:block tal:condition="request/form.submitted|nothing">
+        <tal:errors tal:define="errors view/validateRequest">
+            <dl class="portalMessage error" tal:condition="errors">
+                <tal:error tal:repeat="error errors">
+                    <dt i18n:translate="form_label_error">Error</dt>
+                    <dd tal:content="error">error</dd>
+                </tal:error>
+            </dl>
+        </tal:errors>
+    </tal:block>
+
+    <h1 class="documentFirstHeading"
+        i18n:translate="search_users_form_title">Search collaborators</h1>
+
+    <form action=""
+      name="users_search"
+      method="get"
+      tal:attributes="action template/getId">
+      
+      <input type="hidden" name="form.submitted" value="1" />
+      <div class="wrapper_search_users">
+          <div class="search_row search_nc">
+              <div class="field">       
+                    <span i18n:translate="searchSurname_title">Surname</span>
+                    <div class="formHelp" i18n:translate="searchSurname_help">start of the surname</div>
+                    <input class="quickSearch"
+                       type="text"
+                       name="searchSurname"
+                       value=""
+                       tal:attributes="value searchSurname;"
+                       />
+                </div>
+                <div class="field">
+                    <span i18n:translate="searchName_title">Name</span>
+                    <div class="formHelp" i18n:translate="searchName_help">start of the name</div>
+                    <input class="quickSearch"
+                       type="text"
+                       name="searchName"
+                       value=""
+                       tal:attributes="value searchName;"
+                       />
+                </div>
+                <div class="field">
+                    <span i18n:translate="searchPhone_title">Phone</span>
+                    <div class="formHelp" i18n:translate="searchPhone_help">final numbers of the phone (for example: 4882)</div>
+                    <input class="quickSearch"
+                           type="text"
+                           name="searchPhone"
+                           value=""
+                           tal:attributes="value searchPhone;"
+                           />
+                
+				
+                </div>
+				<div class="field">
+                    <span i18n:translate="searchOffice_title">Organization/Office</span>
+                    <input class="quickSearch"
+                           type="text"
+                           name="searchOffice"
+                           value=""
+                           tal:attributes="value searchOffice;"
+                           />
+				
+            	</div>
+			</div>
+            <div class="search_row search_nc">
+                    <input type="submit"
+                                   class="searchButton"
+                                   name="form.button.Search"
+                                   value="Find collaborators"
+                                   i18n:attributes="value label_search_collaborators;"
+                                   />
+            </div>
+        </div>
+    </form>
+    <div tal:condition="request/form.submitted|nothing">
+         <tal:query tal:define="results view/searchByRequest;
+                  batch python:Batch(results, b_size, int(b_start), orphan=1)">
+            <tal:batch tal:condition="python:len(batch)>0">
+            	<div metal:use-macro="here/batch_macros/macros/navigation" />
+                <dl>
+                    <tal:for repeat="this_user batch">
+                        <tal:user tal:condition="this_user/sn|nothing"
+                              tal:define="userid this_user/userid;
+                                  sn this_user/sn|nothing;
+                                  givenName this_user/givenName|nothing;
+                                  email this_user/mail|nothing;
+                                  phone this_user/telephoneNumber|nothing;
+                                  ufficio this_user/destinationIndicator|nothing;
+                                  ">
+                            <dt>
+                                <a href="prefs_user_details"
+                                     tal:attributes="href string:${here/absolute_url}/author/${userid}">
+                                   <tal:block replace="structure portal/user.gif" />&nbsp;<span tal:replace="sn">sn</span>, <span tal:replace="givenName">givenName</span>
+                                   (<span tal:replace="userid">userid</span>)
+                                </a>
+                                <div tal:condition="ufficio"><span tal:content="ufficio">ufficio</span></div>
+                            </dt>
+                            <dd>
+                                <div tal:condition="email"><strong>Email:</strong> <a tal:attributes="href string:mailto:${email}" tal:content="email">email</a></div>
+                                <div tal:condition="phone">
+                                	<strong>
+										<span tal:omit-tag="" i18n:translate="searchPhone_title">Phone</span>:
+									</strong><span class="phone" tal:content="phone">phone</span></div>
+                            </dd>
+                        </tal:user>
+                    </tal:for>
+                </dl>
+				<div metal:use-macro="here/batch_macros/macros/navigation" />
+            </tal:batch>
+            <p class="discreet red"
+               tal:condition="python:not batch"
+               i18n:translate="text_nomatches">No one user found with the given parameters.
+            </p>
+            </tal:query>
+        </div>
+
+
+
+</div>
+</html>
+
