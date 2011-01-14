@@ -8,8 +8,7 @@ from Products.statusmessages.interfaces import IStatusMessage
 from rer.groupware.addressbook import groupwareAddressbookMessageFactory as _
 
 class SearchFormUsersView(PASSearchView):
-    """ """
-
+    """"""
     def searchByRequest(self, request=None, sort_by='userid'):
         if not request:
             request = self.request
@@ -73,6 +72,6 @@ class SearchFormUsersView(PASSearchView):
             if len(criteria) == 0:
                 return tuple()
             # not empty
-            return self.searchUsers(sort_by=sort_by)
+            return self.searchUsers(sort_by=sort_by,**criteria)
 
 

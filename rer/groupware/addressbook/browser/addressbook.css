@@ -1,4 +1,4 @@
-div.roomGroupMembers{
+ p      div.roomGroupMembers{
 	border-bottom:1px dotted #ccc !important;
 }
 
@@ -35,6 +35,7 @@ li.roomGroupMemberDetail{
 .userName{
 	font-weight: bold;
     padding-bottom: 0.5em;
+	margin-bottom:0; 
 }
 
 .userRole{
