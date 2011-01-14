@@ -1,7 +1,6 @@
 function setExpanded(event){
 	event.preventDefault();
 	var parent=jq(this).parent();
-	console.log(this);
 	var ul=parent.children('ul');
 	if (ul.hasClass('hiddenMembers')) {
 		ul.removeClass('hiddenMembers');
