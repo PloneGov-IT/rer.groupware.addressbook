@@ -83,7 +83,7 @@ class Renderer(base.Renderer):
             return ''
         room_id = room.getId()
         for group in user_groups:
-            if group.startswith(room_id) and not (group.endswith('notifyBig') or group.endswith('notifySmall')):
+            if group.startswith(room_id) and not (group.endswith('notifyDocs') or group.endswith('notifyNewsEvents')):
                 return group[group.index('.')+1:]
         return ''
         

@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.0.2 (2011-01-20)
+------------------
+
+* changed group name in portlet control [andrea]
+
 1.0.1 (2011-01-14)
 ------------------
 
