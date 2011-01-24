@@ -65,7 +65,7 @@ class SearchFormUsersView(PASSearchView):
                 criteria['sn'] = "%s" % self.request.searchSurname.strip()
             if self.request.get('searchPhone', False):
                 #contains
-                criteria['phone']= "%s" % self.request.searchPhone.strip()
+                criteria['telephoneNumber']= "%s" % self.request.searchPhone.strip()
             if self.request.get('searchOffice', False):
                 #contains
                 criteria['destinationIndicator']= "%s" % self.request.searchOffice.strip()
