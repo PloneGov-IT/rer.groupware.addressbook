@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-01-03 16:40+0000\n"
+"POT-Creation-Date: 2011-01-24 08:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,12 +15,17 @@ msgstr ""
 "Domain: rer.groupware.addressbook\n"
 
 #. Default: "In this room you are in ${role_in_room_label} group."
-#: ./portlets/groupware_portlet_user.pt:20
+#: ./portlets/groupware_portlet_user.pt:14
 msgid "In this room you are in ${role_in_room_label} group."
 msgstr ""
 
-#: ./browser/search_form_users.py:48
+#: ./browser/search_form_users.py:50
 msgid "You must enter at least one search criteria"
+msgstr ""
+
+#. Default: "coordinators"
+#: ./browser/search_form_users.pt
+msgid "coordinators"
 msgstr ""
 
 #. Default: "Error"
@@ -28,9 +33,29 @@ msgstr ""
 msgid "form_label_error"
 msgstr ""
 
+#. Default: "hosts"
+#: ./browser/search_form_users.pt
+msgid "hosts"
+msgstr ""
+
 #. Default: "Find collaborators"
-#: ./browser/search_form_users.pt:88
+#: ./browser/search_form_users.pt:89
 msgid "label_search_collaborators"
+msgstr ""
+
+#. Default: "members"
+#: ./browser/search_form_users.pt
+msgid "members"
+msgstr ""
+
+#. Default: "members advanced"
+#: ./browser/search_form_users.pt
+msgid "membersAdv"
+msgstr ""
+
+#. Default: "start of the organization/office"
+#: ./browser/search_form_users.pt:78
+msgid "searcOffice_help"
 msgstr ""
 
 #. Default: "start of the name"
@@ -74,12 +99,7 @@ msgid "search_users_form_title"
 msgstr ""
 
 #. Default: "No one user found with the given parameters."
-#: ./browser/search_form_users.pt:129
+#: ./browser/search_form_users.pt:133
 msgid "text_nomatches"
-msgstr ""
-
-#. Default: "welcome"
-#: ./portlets/groupware_portlet_user.pt:15
-msgid "welcome_label"
 msgstr ""
 

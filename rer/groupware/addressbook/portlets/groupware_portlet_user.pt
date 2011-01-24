@@ -11,7 +11,7 @@
              />
 			<p class="userName"  tal:content="user/name"/>
 			<p i18n:translate="" class="userRole" tal:condition="user/role_in_room">
-				In this room you are in <span class="groupRole" tal:content="user/role_in_room" i18n:name="role_in_room_label">member</span> group. 
+				In this collaboration group you are <span class="groupRole" tal:content="user/role_in_room" i18n:name="role_in_room_label">member</span>. 
 			</p>
 		</div>
 	</dd>

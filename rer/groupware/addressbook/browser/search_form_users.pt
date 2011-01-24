@@ -75,6 +75,7 @@
                 </div>
 				<div class="field">
                     <span i18n:translate="searchOffice_title">Organization/Office</span>
+					<div class="formHelp" i18n:translate="searcOffice_help">start of the organization/office</div>
                     <input class="quickSearch"
                            type="text"
                            name="searchOffice"
