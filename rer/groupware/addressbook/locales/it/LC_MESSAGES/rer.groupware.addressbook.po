@@ -36,7 +36,7 @@ msgstr "Errore"
 #. Default: "hosts"
 #: ./browser/search_form_users.pt
 msgid "hosts"
-msgstr ""
+msgstr "ospiti"
 
 #. Default: "Find collaborators"
 #: ./browser/search_form_users.pt:89
