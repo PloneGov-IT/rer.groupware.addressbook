@@ -264,7 +264,7 @@
             </tal:feedbackForm>
             <!-- listing of content created by this user -->
         
-            <tal:authorContent define="author_content python:context.portal_catalog.searchResults(Creator=author, sort_on='created', sort_order='reverse')[:10];"
+            <tal:authorContent define="author_content python:context.restrictedTraverse('user_history_view')(userid=author,limit=3);"
                                condition="author_content">
         
                 <h2 i18n:translate="heading_author_content">
@@ -272,22 +272,25 @@
                 </h2>
                 
                 <div metal:define-macro="user_content_listing">
-                <table class="vertical listing" 
-                       summary="Lists content written by an author grouped by content type" 
-                       i18n:attributes="summary summary_author_content_list;">
-                    <tal:repeat repeat="item author_content">
-                        <tr>
-                            <th tal:content="python:toLocalizedTime(item.Date)"
-                                style="white-space: nowrap">
-                                Date
-                            </th>
-                            <td>
-                                <a href="" tal:attributes="href item/getURL"
-                                   tal:content="item/pretty_title_or_id">title</a>
-                            </td>
-                        </tr>
-                    </tal:repeat>
-                </table>
+                <tal:rooms repeat="room python:author_content.keys()">
+               		<h3 tal:content="room"></h3>
+				    <table class="vertical listing" 
+	                       summary="Lists content written by an author grouped by content type" 
+	                       i18n:attributes="summary summary_author_content_list;">
+	                        <tal:repeat repeat="item python:author_content[room]">
+		                        <tr>
+		                            <th tal:content="python:toLocalizedTime(item.Date)"
+		                                style="white-space: nowrap">
+		                                Date
+		                            </th>
+		                            <td>
+		                                <a href="" tal:attributes="href item/getURL"
+		                                   tal:content="item/pretty_title_or_id">title</a>
+		                            </td>
+		                        </tr>
+                            </tal:repeat>
+                    </table>
+				</tal:rooms>
                 </div>
 
                 <p>

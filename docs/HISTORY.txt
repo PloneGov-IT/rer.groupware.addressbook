@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.1.0-Unreleased (2011-04-??)
+------------------
+
+* added photos in search_results and add email field. [andrea]
+* splitted documents created in author.pt by room [andrea]
+
 1.0.5 (2011-01-25)
 ------------------
 

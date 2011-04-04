@@ -18,7 +18,15 @@
       permission="zope.Public"
 	  allowed_attributes="getMemberInfo"
       />
-		
+
+ <browser:page
+        name="user_history_view"
+        for="*"
+        class=".user_history_view.View"
+        template="search_form_users.pt"
+        permission="zope2.View"
+        />
+ 
  <browser:resourceDirectory
       name="rer.groupware.addressbook.javascripts"
       directory="javascripts"

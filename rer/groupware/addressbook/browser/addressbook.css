@@ -1,4 +1,5 @@
- p      div.roomGroupMembers{
+/**PORTLET STYLES**/ 
+p div.roomGroupMembers{
 	border-bottom:1px dotted #ccc !important;
 }
 
@@ -28,9 +29,6 @@ li.roomGroupMemberDetail{
     list-style-type: square;
 }
 
-.quickSearch{
-	display:block;
-}
 
 .userName{
 	font-weight: bold;
@@ -55,6 +53,30 @@ li.roomGroupMemberDetail{
 
 .groupRole{
 	font-style:italic;
+}
+
+/*SEARCH FORM*/
+/*.quickSearch{
+	display:block;
+}*/
+
+div.searchFields div.field{
+	float:left;
+	clear:none;
+}
+
+.userAvatarSearch{
+	float: left;
+	margin-right:0.5em;   
+}
+
+.userSearchResults{
+	margin-top:2em;
+}
+
+.userSearchName{
+	margin-bottom:0.5em;
+	margin-top:1em;
 }
 
 /*AUTHOR.CPT*/

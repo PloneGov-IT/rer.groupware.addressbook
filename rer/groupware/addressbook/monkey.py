@@ -1,6 +1,6 @@
 from Products.LDAPUserFolder.LDAPDelegate import filter_format
 from Products.LDAPUserFolder.utils import to_utf8,guid2string
-STARTSWITH_FIELDS = ['sn','givenName',]
+STARTSWITH_FIELDS = ['sn','givenName','mail']
 ENDSWITH_FIELDS = ['telephoneNumber',]
 EXACT_FIELDS = ['employeeNumber',]
 import logging
