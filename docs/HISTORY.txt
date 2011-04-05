@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.0-Unreleased (2011-04-??)
+1.1.0 (2011-04-05)
 ------------------
 
 * added photos in search_results and add email field. [andrea]
