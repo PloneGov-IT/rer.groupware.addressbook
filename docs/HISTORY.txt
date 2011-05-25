@@ -4,6 +4,7 @@ Changelog
 1.1.1 (2011-05-??)
 ------------------
 * customized translation for group names [andrea]
+* fixed accessibility, using labels in search form [andrea]
 
 1.1.0 (2011-04-05)
 ------------------

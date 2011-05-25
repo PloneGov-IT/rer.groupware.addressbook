@@ -43,7 +43,7 @@
       <div class="wrapper_search_users">
           <div class="searchFields">
               <div class="field">       
-                    <span i18n:translate="searchSurname_title">Surname</span>
+                    <label for="searchSurname" i18n:translate="searchSurname_title">Surname</label>
                     <div class="formHelp" i18n:translate="searchSurname_help">start of the surname</div>
                     <input class="quickSearch"
                        type="text"
@@ -53,7 +53,7 @@
                        />
                 </div>
                 <div class="field">
-                    <span i18n:translate="searchName_title">Name</span>
+                    <label for="searchName" i18n:translate="searchName_title">Name</label>
                     <div class="formHelp" i18n:translate="searchName_help">start of the name</div>
                     <input class="quickSearch"
                        type="text"
@@ -63,7 +63,7 @@
                        />
                 </div>
 				<div class="field">
-                    <span i18n:translate="searchEmail_title">Email</span>
+                    <label for="searchEmail" i18n:translate="searchEmail_title">Email</label>
                     <div class="formHelp" i18n:translate="searchEmail_help">start of the email</div>
                     <input class="quickSearch"
                        type="text"
@@ -74,7 +74,7 @@
                 </div>
 				<div class="visualClear"></div>
                 <div class="field">
-                    <span i18n:translate="searchPhone_title">Phone</span>
+                    <label for="searchPhone" i18n:translate="searchPhone_title">Phone</label>
                     <div class="formHelp" i18n:translate="searchPhone_help">final numbers of the phone (for example: 4882)</div>
                     <input class="quickSearch"
                            type="text"
@@ -86,7 +86,7 @@
 				
                 </div>
 				<div class="field">
-                    <span i18n:translate="searchOffice_title">Organization/Office</span>
+                    <label for="searchOffice" i18n:translate="searchOffice_title">Organization/Office</label>
 					<div class="formHelp" i18n:translate="searcOffice_help">start of the organization/office</div>
                     <input class="quickSearch"
                            type="text"
