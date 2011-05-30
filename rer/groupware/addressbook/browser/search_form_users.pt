@@ -47,6 +47,7 @@
                     <div class="formHelp" i18n:translate="searchSurname_help">start of the surname</div>
                     <input class="quickSearch"
                        type="text"
+					   id="searchSurname"
                        name="searchSurname"
                        value=""
                        tal:attributes="value searchSurname;"
@@ -57,6 +58,7 @@
                     <div class="formHelp" i18n:translate="searchName_help">start of the name</div>
                     <input class="quickSearch"
                        type="text"
+					   id="searchName"
                        name="searchName"
                        value=""
                        tal:attributes="value searchName;"
@@ -67,6 +69,7 @@
                     <div class="formHelp" i18n:translate="searchEmail_help">start of the email</div>
                     <input class="quickSearch"
                        type="text"
+					   id="searchEmail"
                        name="searchEmail"
                        value=""
                        tal:attributes="value searchEmail;"
@@ -78,7 +81,8 @@
                     <div class="formHelp" i18n:translate="searchPhone_help">final numbers of the phone (for example: 4882)</div>
                     <input class="quickSearch"
                            type="text"
-                           name="searchPhone"
+                           id="searchPhone"
+						   name="searchPhone"
                            value=""
                            tal:attributes="value searchPhone;"
                            />
@@ -90,6 +94,7 @@
 					<div class="formHelp" i18n:translate="searcOffice_help">start of the organization/office</div>
                     <input class="quickSearch"
                            type="text"
+						   id="searchOffice"
                            name="searchOffice"
                            value=""
                            tal:attributes="value searchOffice;"
