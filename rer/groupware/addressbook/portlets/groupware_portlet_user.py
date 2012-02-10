@@ -116,6 +116,7 @@ class Renderer(base.Renderer):
                                     'givenName':member.getProperty('givenName',''),
                                     'fullname':member.getProperty('fullname',''),
                                     'email':member.getProperty('email','')})
+            list_members.sort(lambda x, y: cmp(x['sn'], y['sn']))
             groups_list.append({'group':_(group_type),
                                 'members':list_members})
         groups_dict={'room_title':room.Title(),

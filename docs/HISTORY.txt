@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.2 (2012-02-10)
+------------------
+* sorted members list [andrea]
+
 1.1.1 (2011-07-08)
 ------------------
 * customized translation for group names [andrea]
