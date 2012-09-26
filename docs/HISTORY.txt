@@ -4,7 +4,7 @@ Changelog
 1.1.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- fixed author url. Now points to the portal [andrea]
 
 
 1.1.4 (2012-06-01)

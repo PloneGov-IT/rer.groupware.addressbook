@@ -29,7 +29,7 @@
 					<ul class="roomGroupMembers hiddenMembers">
 						<li class="roomGroupMemberDetail" tal:repeat="user group/members">
 							<tal:user define="userid user/userid">
-								<a tal:attributes="href string:${here/absolute_url}/author/${userid}">
+								<a tal:attributes="href string:${here/portal_url}/author/${userid}">
 									<span tal:condition="python:user.get('sn','') and user.get('givenName','')"
 										  tal:content="string:${user/sn} ${user/givenName}"></span>
 									<span tal:condition="not:python:user.get('givenName','') and user.get('sn','')"
