@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.5 (unreleased)
+1.1.5 (2012-09-26)
 ------------------
 
 - fixed author url. Now points to the portal [andrea]
