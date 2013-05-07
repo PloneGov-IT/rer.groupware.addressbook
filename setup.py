@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.1.6.dev0'
+version = '2.0.0.dev0'
 
 setup(name='rer.groupware.addressbook',
       version=version,
@@ -28,5 +28,7 @@ setup(name='rer.groupware.addressbook',
       ],
       entry_points="""
       # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       )
