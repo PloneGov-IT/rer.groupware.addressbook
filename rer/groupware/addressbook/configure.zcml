@@ -12,7 +12,6 @@
   <include package=".browser" />
   <include package=".portlets" />
   <include file="skins.zcml" />
-  <include file="monkey.zcml" />
   
   <!-- Register the installation GenericSetup extension profile -->
   <genericsetup:registerProfile
@@ -23,11 +22,4 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   
-  <genericsetup:importStep
-	  name="rer.groupware.addressbook"
-	  title="Groupware Addressbook configuration"
-	  description="Configures groupware addressbook properties"
-	  handler="rer.groupware.addressbook.exportimport.import_various"
-	  />
-	  
 </configure>

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-03-31 16:06+0000\n"
+"POT-Creation-Date: 2013-05-15 15:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 msgid "In this collaboration group you are ${role_in_room_label}."
 msgstr ""
 
-#: ./browser/search_form_users.py:48
+#: ./browser/search_form_users.py:55
 msgid "You must enter at least one search criteria"
 msgstr ""
 
@@ -28,9 +28,29 @@ msgstr ""
 msgid "coordinators"
 msgstr ""
 
+#. Default: "Email address that you want search."
+#: ./browser/search_form_users.pt:55
+msgid "email_help"
+msgstr ""
+
+#. Default: "Email"
+#: ./browser/search_form_users.pt:54
+msgid "email_title"
+msgstr ""
+
 #. Default: "Error"
-#: ./browser/search_form_users.pt:27
+#: ./browser/search_form_users.pt:24
 msgid "form_label_error"
+msgstr ""
+
+#. Default: "Insert the name or surname that you want search."
+#: ./browser/search_form_users.pt:44
+msgid "fullname_help"
+msgstr ""
+
+#. Default: "Name or surname"
+#: ./browser/search_form_users.pt:43
+msgid "fullname_title"
 msgstr ""
 
 #. Default: "hosts"
@@ -39,7 +59,7 @@ msgid "hosts"
 msgstr ""
 
 #. Default: "Find collaborators"
-#: ./browser/search_form_users.pt:102
+#: ./browser/search_form_users.pt:67
 msgid "label_search_collaborators"
 msgstr ""
 
@@ -53,68 +73,18 @@ msgstr ""
 msgid "membersAdv"
 msgstr ""
 
-#. Default: "start of the organization/office"
-#: ./browser/search_form_users.pt:90
-msgid "searcOffice_help"
-msgstr ""
-
-#. Default: "start of the email"
-#: ./browser/search_form_users.pt:67
-msgid "searchEmail_help"
-msgstr ""
-
-#. Default: "Email"
-#: ./browser/search_form_users.pt:66
-msgid "searchEmail_title"
-msgstr ""
-
-#. Default: "start of the name"
-#: ./browser/search_form_users.pt:57
-msgid "searchName_help"
-msgstr ""
-
-#. Default: "Name"
-#: ./browser/search_form_users.pt:56
-msgid "searchName_title"
-msgstr ""
-
-#. Default: "Organization/Office"
-#: ./browser/search_form_users.pt:89
-msgid "searchOffice_title"
-msgstr ""
-
-#. Default: "final numbers of the phone (for example: 4882)"
-#: ./browser/search_form_users.pt:78
-msgid "searchPhone_help"
-msgstr ""
-
-#. Default: "Phone"
-#: ./browser/search_form_users.pt:77
-msgid "searchPhone_title"
-msgstr ""
-
-#. Default: "Rooms"
-#: ./browser/search_form_users.pt:144
+#. Default: "Rooms:"
+#: ./browser/search_form_users.pt:100
 msgid "searchRooms_title"
 msgstr ""
 
-#. Default: "start of the surname"
-#: ./browser/search_form_users.pt:47
-msgid "searchSurname_help"
-msgstr ""
-
-#. Default: "Surname"
-#: ./browser/search_form_users.pt:46
-msgid "searchSurname_title"
-msgstr ""
-
 #. Default: "Search collaborators"
-#: ./browser/search_form_users.pt:34
+#: ./browser/search_form_users.pt:31
 msgid "search_users_form_title"
 msgstr ""
 
 #. Default: "No one user found with the given parameters."
-#: ./browser/search_form_users.pt:162
+#: ./browser/search_form_users.pt:114
 msgid "text_nomatches"
 msgstr ""
 

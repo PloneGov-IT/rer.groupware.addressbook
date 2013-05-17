@@ -4,22 +4,14 @@
     i18n_domain="rer.groupware.addressbook">
  
  <browser:page
-        name="users_search"
+        name="users-search"
         for="*"
 		class=".search_form_users.SearchFormUsersView"
         template="search_form_users.pt"
         permission="zope2.View"
         />
  
- <browser:page
-      for="*"
-      class=".memberinfo.MemberInfo"
-      name="memberinfo"
-      permission="zope.Public"
-	  allowed_attributes="getMemberInfo"
-      />
-
- <browser:page
+  <browser:page
         name="user_history_view"
         for="*"
         class=".user_history_view.View"

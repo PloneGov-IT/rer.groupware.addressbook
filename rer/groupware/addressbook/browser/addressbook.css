@@ -63,6 +63,7 @@ li.roomGroupMemberDetail{
 div.searchFields div.field{
 	float:left;
 	clear:none;
+    margin-right: 1em;
 }
 
 .userAvatarSearch{
@@ -82,4 +83,8 @@ div.searchFields div.field{
 /*AUTHOR.CPT*/
 .authorInformations{
 	margin-top: 1em;
+}
+
+table.lastRoomContents th {
+    width: 20%;
 }

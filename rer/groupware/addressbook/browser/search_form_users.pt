@@ -14,11 +14,8 @@
                 b_start request/b_start | python:0;
                 b_size request/b_size | python:20;
                 portal_roles here/getGlobalPortalRoles;
-                searchName request/searchName | nothing;
-				searchEmail request/searchEmail | nothing;
-                searchSurname request/searchSurname | nothing;
-                searchPhone request/searchPhone | nothing;
-                searchOffice request/searchOffice | nothing;">
+                fullname request/fullname | nothing;
+				        email request/email | nothing;">
 
     <tal:block tal:condition="request/form.submitted|nothing">
         <tal:errors tal:define="errors view/validateRequest">
@@ -37,129 +34,83 @@
     <form action=""
       name="users_search"
       method="get"
-      tal:attributes="action template/getId">
+      tal:attributes="action string:users-search">
       
       <input type="hidden" name="form.submitted" value="1" />
       <div class="wrapper_search_users">
           <div class="searchFields">
-              <div class="field">       
-                    <label for="searchSurname" i18n:translate="searchSurname_title">Surname</label>
-                    <div class="formHelp" i18n:translate="searchSurname_help">start of the surname</div>
-                    <input class="quickSearch"
-                       type="text"
-					   id="searchSurname"
-                       name="searchSurname"
-                       value=""
-                       tal:attributes="value searchSurname;"
-                       />
-                </div>
-                <div class="field">
-                    <label for="searchName" i18n:translate="searchName_title">Name</label>
-                    <div class="formHelp" i18n:translate="searchName_help">start of the name</div>
-                    <input class="quickSearch"
-                       type="text"
-					   id="searchName"
-                       name="searchName"
-                       value=""
-                       tal:attributes="value searchName;"
-                       />
-                </div>
-				<div class="field">
-                    <label for="searchEmail" i18n:translate="searchEmail_title">Email</label>
-                    <div class="formHelp" i18n:translate="searchEmail_help">start of the email</div>
-                    <input class="quickSearch"
-                       type="text"
-					   id="searchEmail"
-                       name="searchEmail"
-                       value=""
-                       tal:attributes="value searchEmail;"
-                       />
-                </div>
-				<div class="visualClear"></div>
-                <div class="field">
-                    <label for="searchPhone" i18n:translate="searchPhone_title">Phone</label>
-                    <div class="formHelp" i18n:translate="searchPhone_help">final numbers of the phone (for example: 4882)</div>
-                    <input class="quickSearch"
-                           type="text"
-                           id="searchPhone"
-						   name="searchPhone"
-                           value=""
-                           tal:attributes="value searchPhone;"
-                           />
-                
-				
-                </div>
-				<div class="field">
-                    <label for="searchOffice" i18n:translate="searchOffice_title">Organization/Office</label>
-					<div class="formHelp" i18n:translate="searcOffice_help">start of the organization/office</div>
-                    <input class="quickSearch"
-                           type="text"
-						   id="searchOffice"
-                           name="searchOffice"
-                           value=""
-                           tal:attributes="value searchOffice;"
-                           />
-				
-            	</div>
-			</div>
-			<div class="visualClear"></div>
-            <div class="search_row search_nc">
+            <div class="field">       
+                  <label for="fullname" i18n:translate="fullname_title">Name or surname</label>
+                  <div class="formHelp" i18n:translate="fullname_help">Insert the name or surname that you want search.</div>
+                  <input class="quickSearch"
+                     type="text"
+  			             id="fullname"
+                     name="fullname"
+                     value=""
+                     tal:attributes="value fullname;"
+                     />
+              </div>
+              <div class="field">
+                  <label for="email" i18n:translate="email_title">Email</label>
+                  <div class="formHelp" i18n:translate="email_help">Email address that you want search.</div>
+                  <input class="quickSearch"
+                     type="text"
+  			             id="email"
+                     name="email"
+                     value=""
+                     tal:attributes="value email;"
+                     />
+              </div>
+			     </div>
+			     <div class="visualClear"></div>
+           <div class="search_row search_nc">
                     <input type="submit"
                                    class="searchButton"
                                    name="form.button.Search"
                                    value="Find collaborators"
                                    i18n:attributes="value label_search_collaborators;"
                                    />
-            </div>
+          </div>
         </div>
     </form>
     <div class="userSearchResults"
 	     tal:condition="request/form.submitted|nothing">
          <tal:query tal:define="results view/searchByRequest;
-                  batch python:Batch(results, b_size, int(b_start), orphan=1)">
+                                batch python:Batch(results, b_size, int(b_start), orphan=1)">
             <tal:batch tal:condition="python:len(batch)>0">
             	<div metal:use-macro="here/batch_macros/macros/navigation" />
-                <dl>
+                <dl tal:define="room_titles view/getRoomTitles">
                     <tal:for repeat="this_user batch">
-                        <tal:user tal:condition="this_user/sn|nothing"
-                              tal:define="userid this_user/userid;
-							      portrait python:view.getPortrait(userid);
-                                  sn this_user/sn|nothing;
-                                  givenName this_user/givenName|nothing;
-                                  email this_user/mail|nothing;
-                                  phone this_user/telephoneNumber|nothing;
-                                  ufficio this_user/destinationIndicator|nothing;
-								  rooms this_user/list_rooms|nothing;
-                                  ">
-                            <dt class="userSearchName">
-						        <img class="userAvatarSearch"
+                      <dt class="userSearchName"
+                          tal:define="userid this_user/userid;
+                                  portrait python:view.getPortrait(userid);
+                                  fullname this_user/title|userid;">
+						              <img class="userAvatarSearch"
 	                                 tal:condition="portrait"
-	                                 tal:attributes="src portrait/absolute_url; alt string:${userid}; title string:${userid}"
-	                            />
-                                <a href="prefs_user_details"
-                                     tal:attributes="href string:${here/absolute_url}/author/${userid}">
-                                   <span tal:replace="sn">sn</span>, <span tal:replace="givenName">givenName</span>
-                                   (<span tal:replace="userid">userid</span>)
-                                </a>
-                                <div tal:condition="ufficio"><span tal:content="ufficio">ufficio</span></div>
-                            </dt>
-                            <dd>
-                            	<div tal:condition="rooms">
-                                    <strong>
-                                        <span tal:omit-tag="" i18n:translate="searchRooms_title">Rooms</span>:
-                                    </strong>
-									<span class="rooms" tal:content="python:', '.join(rooms)">phone</span>
-								</div>
-                                <div tal:condition="email">
-                                	<strong>Email:</strong>
-									<a tal:attributes="href string:mailto:${email}" tal:content="email">email</a></div>
-                                <div tal:condition="phone">
-                                	<strong>
-										<span tal:omit-tag="" i18n:translate="searchPhone_title">Phone</span>:
-									</strong><span class="phone" tal:content="phone">phone</span></div>
-                            </dd>
-							<div class="visualClear"></div>
-                        </tal:user>
+	                                 tal:attributes="src portrait/absolute_url; alt string:${userid}; title string:${userid}"/>
+                          <a href="prefs_user_details"
+                               tal:attributes="href string:${here/absolute_url}/author/${userid}">
+                             <span tal:replace="fullname" />
+                             (<span tal:replace="userid">userid</span>)
+                          </a>
+                      </dt>
+                      <dd>
+                    	   <div tal:define="rooms this_user/list_rooms|nothing;"
+                              tal:condition="rooms">
+                            <strong i18n:translate="searchRooms_title">Rooms:</strong>
+                            <span class="rooms">
+                              <tal:rooms repeat="room_id rooms">
+                                <tal:room content="python:room_titles.get(room_id, room_id)"/>
+                                <tal:separator condition="not:repeat/room_id/end">, </tal:separator>
+                              </tal:rooms>
+								         </div>
+                         <div tal:define="email this_user/email|nothing;"
+                              tal:condition="email">
+                        	   <strong>Email:</strong>
+									           <a tal:attributes="href string:mailto:${email}" tal:content="email">email</a>
+                         </div>
+                      </dd>
+							        <div class="visualClear"></div>
                     </tal:for>
                 </dl>
 				<div metal:use-macro="here/batch_macros/macros/navigation" />

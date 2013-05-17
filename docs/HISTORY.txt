@@ -7,6 +7,8 @@ Changelog
 Plone 4 version
 
 - supported z3c.autoinclude [keul]
+- fixed search view [andrea]
+- fixed portlet [andrea]
 
 1.1.5 (2012-09-26)
 ------------------
