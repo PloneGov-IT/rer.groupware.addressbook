@@ -11,7 +11,7 @@
              	tal:attributes="src portrait/absolute_url; alt string:${userinfos/id}; title string:${userinfos/id}"
              />
 			<p class="userName"  tal:content="userinfos/name"/>
-			<p i18n:translate="" class="userRole" tal:condition="userinfos/role_in_room">
+			<p i18n:translate="" class="userRole" tal:condition="python:userinfos.get('role_in_room', '')">
 				In this collaboration group you are <span class="groupRole" tal:content="userinfos/role_in_room" i18n:name="role_in_room_label">member</span>. 
 			</p>
 		</div>

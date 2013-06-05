@@ -60,9 +60,9 @@ class Renderer(base.Renderer):
         pm = getToolByName(self.context, 'portal_membership')
         user = pm.getAuthenticatedMember()
         user_portrait = pm.getPersonalPortrait(user.getId())
-        name = user.getProperty('fullname', user.getId())
-        gn = user.getProperty('givenName', '')
-        sn = user.getProperty('sn', '')
+        name = user.getProperty('fullname')
+        if not name:
+            name = str(user.getId())
         userinfo = {'id': str(user.getId()),
                     'name': name,
                     'portrait': user_portrait}
@@ -74,10 +74,6 @@ class Renderer(base.Renderer):
         if room:
             userinfo['role_in_room'] = self.getRoleInRoom(user, room)
             userinfo['room_members'] = self.getRoomMembers(room)
-        if gn and sn:
-            name = "%s %s " % (gn, sn)
-        if not name or name == " ":
-            name = str(user.getId())
         return userinfo
 
     def getDefaultRoomGroups(self):
