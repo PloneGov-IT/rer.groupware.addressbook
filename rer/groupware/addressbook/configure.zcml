@@ -21,5 +21,13 @@
       description=""
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  
+
+  <genericsetup:importStep
+        name="rer.groupware.addressbook"
+        title="Additional Velruse Authentication setup"
+        description="Register properties"
+        handler=".setuphandlers.importVarious">
+     <depends name="propertiestool"/>
+  </genericsetup:importStep>
+
 </configure>

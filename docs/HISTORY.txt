@@ -9,6 +9,8 @@ Plone 4 version
 - supported z3c.autoinclude [keul]
 - fixed search view [andrea]
 - fixed portlet [andrea]
+- added option to switch off the contact author section inside
+  /author [keul]
 
 1.1.5 (2012-09-26)
 ------------------

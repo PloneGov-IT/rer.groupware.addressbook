@@ -40,7 +40,9 @@
                                 here_url context/@@plone_context_state/object_url;
                                 member context/@@plone_portal_state/member;
                                 portal context/@@plone_portal_state/portal;
-                                email_from_address portal/email_from_address">
+                                email_from_address portal/email_from_address;
+								groupware_properties site_properties/groupware_properties|nothing;
+								contact_author_enabled groupware_properties/contact_author_enabled|nothing">
 
         <tal:noAuthor condition="not: authorinfo">
             <dl class="portalMessage error">
@@ -141,7 +143,7 @@
                        i18n:translate="label_author_external_home_page">Author's external home page&hellip;</a>
                     </p>
 
-                    <tal:noemailsetup tal:condition="python:not (email_from_address or isAnon)">
+                    <tal:noemailsetup tal:condition="python:not (email_from_address or isAnon) and contact_author_enabled">
                         <p class="discreet"
                            i18n:translate="text_no_email_setup">
                             This site doesn't have a valid email setup, so you cannot use
@@ -149,7 +151,7 @@
                         </p>
                     </tal:noemailsetup>
 
-                    <tal:noemail tal:condition="python:not isAnon and not member.getProperty('email')">
+                    <tal:noemail tal:condition="python:not isAnon and not member.getProperty('email') and contact_author_enabled">
                         <p class="discreet"
                            i18n:translate="text_no_member_email">
                             You do not have an email address, so you
@@ -158,7 +160,7 @@
                         </p>
                     </tal:noemail>
 
-                    <tal:mailsetup tal:condition="python:email_from_address and authorinfo['has_email']">
+                    <tal:mailsetup tal:condition="python:email_from_address and authorinfo['has_email'] and contact_author_enabled">
 
                         <div class="formControls" tal:condition="isAnon">
                         <form
