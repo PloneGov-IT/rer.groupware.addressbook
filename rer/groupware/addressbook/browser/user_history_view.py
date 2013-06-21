@@ -30,7 +30,7 @@ class View(BrowserView):
             item_room = brain.parentRoom
             if not item_room:
                 portal_state = getMultiAdapter((self.context, self.context.REQUEST), name=u'plone_portal_state')
-                item_room = portal_state.portal_title
+                item_room = portal_state.portal_title()
             if item_room not in res_dict:
                 res_dict[item_room] = [brain]
             else:
