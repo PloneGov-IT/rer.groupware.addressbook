@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
+from zope.component import getMultiAdapter
 
 
 class View(BrowserView):
@@ -26,10 +27,14 @@ class View(BrowserView):
                                 portal_type=search_types)
         res_dict = {}
         for brain in brains:
-            if brain.parentRoom not in res_dict:
-                res_dict[brain.parentRoom] = [brain]
+            item_room = brain.parentRoom
+            if not item_room:
+                portal_state = getMultiAdapter((self.context, self.context.REQUEST), name=u'plone_portal_state')
+                item_room = portal_state.portal_title
+            if item_room not in res_dict:
+                res_dict[item_room] = [brain]
             else:
                 limit = kw.get('limit', 0)
-                if not limit or len(res_dict[brain.parentRoom]) < limit:
-                    res_dict[brain.parentRoom].append(brain)
+                if not limit or len(res_dict[item_room]) < limit:
+                    res_dict[item_room].append(brain)
         return res_dict
