@@ -83,7 +83,7 @@ class Renderer(base.Renderer):
         groups_settings = registry.forInterface(IRoomGroupsSettingsSchema, check=False)
         active_groups = getattr(groups_settings, 'active_groups', None)
         passive_groups = getattr(groups_settings, 'passive_groups', None)
-        return passive_groups + active_groups
+        return active_groups + passive_groups
 
     def getRoleInRoom(self, user, room):
         room_id = room.getId()

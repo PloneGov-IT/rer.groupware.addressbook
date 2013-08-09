@@ -4,7 +4,7 @@ Changelog
 2.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- inverted order of passive and active groups in portlet [andrea]
 
 
 2.0.0 (2013-06-24)
