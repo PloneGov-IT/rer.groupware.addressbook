@@ -118,9 +118,10 @@ class Renderer(base.Renderer):
                 list_members.append({'userid': member.getId(),
                                     'fullname': member.getProperty('fullname', ''),
                                     'email': member.getProperty('email', '')})
-            list_members.sort(lambda x, y: cmp(x.get('fullname', ''), y.get('fullname', '')))
-            groups_list.append({'group': default_group_title,
-                                'members': list_members})
+            if list_members:
+                list_members.sort(lambda x, y: cmp(x.get('fullname', ''), y.get('fullname', '')))
+                groups_list.append({'group': default_group_title,
+                                    'members': list_members})
         return {'room_title': room.Title(),
                 'groups_list': groups_list}
 
