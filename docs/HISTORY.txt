@@ -7,6 +7,7 @@ Changelog
 - inverted order of passive and active groups in portlet [andrea]
 - fix portlet groups. if a group doesn't have users, doesn't show it in the
   portlet [andrea]
+- add link to author view in portlet [andrea]
 
 2.0.0 (2013-06-24)
 ------------------
