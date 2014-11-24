@@ -6,17 +6,18 @@ version = '2.0.2.dev0'
 setup(name='rer.groupware.addressbook',
       version=version,
       description="A suite that allow users to search users in the groupware",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=open("README.rst").read() + "\n" +
+                       open(os.path.join("docs", "HISTORY.rst")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Programming Language :: Python",
+        "Framework :: Plone :: 4.2",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='',
       author='RedTurtle Technology',
-      author_email='sviluppoplone@redturtle.net',
-      url='',
+      author_email='sviluppoplone@redturtle.it',
+      url='https://github.com/PloneGov-IT/rer.groupware.addressbook',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['rer', 'rer.groupware'],
