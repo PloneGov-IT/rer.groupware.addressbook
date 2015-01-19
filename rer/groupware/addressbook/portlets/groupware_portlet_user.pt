@@ -28,7 +28,8 @@
 					 tal:define="last repeat/group/end"
 					 tal:attributes="class python:'roomGroupMembers lastMemberDetail' and last or 'roomGroupMembers'">
 					<a href="#" class="groupName">
-						<span tal:content="group/group">group name</span>
+						<span i18n:translate=""
+							  tal:content="group/group">group name</span>
 					</a>
 					<ul class="roomGroupMembers hiddenMembers">
 						<li class="roomGroupMemberDetail" tal:repeat="user group/members">

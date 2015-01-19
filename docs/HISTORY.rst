@@ -4,7 +4,7 @@ Changelog
 2.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- add translatations for group names in the portlet [cekk]
 
 
 2.0.1 (2013-11-05)
