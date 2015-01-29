@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0.3 (unreleased)
+2.0.3 (2015-01-29)
 ------------------
 
 - fix translations for group names in the portlet [cekk]
