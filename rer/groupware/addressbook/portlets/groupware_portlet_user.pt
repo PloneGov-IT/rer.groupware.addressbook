@@ -14,8 +14,10 @@
 				<a tal:attributes="href string:${here/portal_url}/author/${userinfos/id}"
 				   tal:content="userinfos/name" />
 			<p/>
-			<p i18n:translate="" class="userRole" tal:condition="python:userinfos.get('role_in_room', '')">
-				In this collaboration group you are <span class="groupRole" tal:content="userinfos/role_in_room" i18n:name="role_in_room_label">member</span>. 
+			<p class="userRole" tal:condition="python:userinfos.get('role_in_room', '')">
+				<span tal:omit-tag="" i18n:translate="">
+					In this collaboration group you play the role of</span>
+				<span tal:replace="userinfos/role_in_room" i18n:translate="">member</span>.
 			</p>
 		</div>
 	</dd>
