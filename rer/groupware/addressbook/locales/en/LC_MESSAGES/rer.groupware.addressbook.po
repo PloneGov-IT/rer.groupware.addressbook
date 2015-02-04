@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-05-15 15:51+0000\n"
+"POT-Creation-Date: 2015-02-04 15:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,12 +14,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: rer.groupware.addressbook\n"
 
-#. Default: "In this collaboration group you are ${role_in_room_label}."
-#: ./portlets/groupware_portlet_user.pt:14
-msgid "In this collaboration group you are ${role_in_room_label}."
+#: ./portlets/groupware_portlet_user.pt:18
+msgid "In this collaboration group you are part of the"
 msgstr ""
 
-#: ./browser/search_form_users.py:55
+#: ./browser/search_form_users.py:92
 msgid "You must enter at least one search criteria"
 msgstr ""
 
@@ -84,7 +83,7 @@ msgid "search_users_form_title"
 msgstr ""
 
 #. Default: "No one user found with the given parameters."
-#: ./browser/search_form_users.pt:114
+#: ./browser/search_form_users.pt:118
 msgid "text_nomatches"
 msgstr ""
 

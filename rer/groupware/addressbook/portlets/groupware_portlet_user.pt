@@ -16,8 +16,8 @@
 			<p/>
 			<p class="userRole" tal:condition="python:userinfos.get('role_in_room', '')">
 				<span tal:omit-tag="" i18n:translate="">
-					In this collaboration group you play the role of</span>
-				<span tal:replace="userinfos/role_in_room" i18n:translate="">member</span>.
+					In this collaboration group you are part of the</span>
+				<span tal:replace="userinfos/role_in_room" i18n:translate="">member</span>
 			</p>
 		</div>
 	</dd>
